@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Galeri302.Models.Araclar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Araçlar</h2>
+<p>
+    @Html.ActionLink("Yeni Kayıt", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table" id="myTable">
+    <thead>
+        <tr>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(m => m.Marka)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(m => m.Model)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(m => m.Durum)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(m => m.Km)
+            </th>
+            <th data-orderable="false" class="all">Eylemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => item.Marka)</td>
+
+                <td>@Html.DisplayFor(m => item.Model)</td>
+
+                <td>@Html.DisplayFor(m => item.Durum)</td>
+
+                <td>@Html.DisplayFor(m => item.Km)</td>
+                <td class="text-nowrap">
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Ayrıntılar", "Details", new { id = item.Id }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+

@@ -1,0 +1,26 @@
+﻿@model Galeri302.Models.yYakitTipi
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sil</h2>
+<h3>Silmek istediğinize emin misiniz?</h3>
+
+<div>
+    <h4>Yakıt Bilgisi</h4>
+    <hr />
+    <dl class="row border">
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Ytipi)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(m => m.Ytipi)</dd>
+
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" />
+            @Html.ActionLink("Lİsteye geri dön", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,123 @@
+﻿@model Galeri302.Models.Araclar
+@{
+    ViewBag.Title = "Düzenleme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Düzenle</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>Araç Düzenle</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Marka, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.Marka, new { htmlAttiributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Marka, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Model, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.Model, new { htmlAttiributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Model, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Km, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.Km, new { htmlAttiributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Km, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Aciklama, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(m => m.Aciklama, new { htmlAttiributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Aciklama, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Durum, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(m => m.Durum, new { htmlAttiributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Durum, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.MotorGucu, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.MotorGucu, new { htmlAttiributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.MotorGucu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.MotorHacmi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.MotorHacmi, new { htmlAttiributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.MotorHacmi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Renk, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.Renk, new { htmlAttiributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Renk, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.VitesId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("VitesId", null, "Seçiniz", new { htmlAttiributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.VitesId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.YakitTipiId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("YakitTipiId", null, "Seçiniz", new { htmlAttiributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.YakitTipiId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Yil, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.Yil, new { htmlAttiributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Yil, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.SehirId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("SehirId", null, "Seçiniz", new { htmlAttiributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.SehirId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Foto, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.Foto, new { htmlAttiributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Foto, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @Html.HiddenFor(m => m.UpdateDate)
+        @Html.HiddenFor(m => m.UpdateUser)
+        @Html.HiddenFor(m => m.dateTime)
+        @Html.HiddenFor(m => m.SaveUser)
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </div>
+
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Listeye geri dön", "Index")
+</div>

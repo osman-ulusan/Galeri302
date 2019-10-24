@@ -1,0 +1,20 @@
+﻿@model  Galeri302.Models.yYakitTipi
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detaylar</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="row border">
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Ytipi)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(m => m.Ytipi)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Listeye geri dön", "Index")
+</p>

@@ -1,0 +1,50 @@
+﻿@model Galeri302.Models.Araclar
+@{
+    ViewBag.Title = "Araç Kaydı Sil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sil</h2>
+<h3>Silmek istediğinize emin misiniz?</h3>
+
+<div>
+    <h4>Araç Bilgisi</h4>
+    <hr />
+    <dl class="row border">
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Marka)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(m => m.Marka)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Model)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(m => m.Model)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Km)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(m => m.Km)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.MotorGucu)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(m => m.MotorGucu)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.MotorHacmi)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(m => m.MotorHacmi)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.YCity.Sehir)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(m => m.YCity.Sehir)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.YYakitTipi.Ytipi)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(m => m.YYakitTipi.Ytipi)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.YVites.Vites)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(m => m.YVites.Vites)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Durum)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(m => m.Durum)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Aciklama)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(m => m.Aciklama)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Yil)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(m => m.Yil)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Foto)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(m => m.Foto)</dd>
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Renk)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(m => m.Renk)</dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+        <input type="submit" value="Sil" class="btn btn-danger"/>
+            @Html.ActionLink("Lİsteye geri dön","Index")
+        </div>
+    }
+</div>
+

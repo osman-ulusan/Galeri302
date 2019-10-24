@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Galeri302.Models.Araclar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Galeria Zekeriya  *  Araçlarınız İtinayla Perte Çıkartılır</h2>
+<h3>Arabalar 10 Numara Abi/Abıla Hoşgeldiniz.</h3>
+<h4>Elimde temizinden 2015 Micra var Hafta içi abim Hafta sonuda ablam biner ister misiniz?</h4>
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Album example</h1>
+            <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+            <p>
+                <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+            </p>
+        </div>
+    </section>
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row">
+
+                @foreach (var item in Model)    
+                {
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="@Html.DisplayFor(m=>item.Foto)"/>
+                            <div class="card-body">
+                                <p class="card-text">Marka : @Html.DisplayFor(m => item.Marka) <br /> Model : @Html.DisplayFor(m => item.Model) <br /> Fiyat : <br /> </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href='@Url.Action("Details","Araclar",new { id = item.Id })' class="btn btn-sm btn-outline-primary">Detaylar</a>
+                                        @*<button type="button" class="btn btn-sm btn-outline-secondary">Favoriye Ekle    </button>*@
+                                    </div>
+                                    <small class="text-muted">2019</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</main> 
